@@ -1,0 +1,12 @@
+CONVERSATION ID,CONVERSATION TITLE,FROM,SENDER PROFILE URL,TO,DATE,SUBJECT,CONTENT
+conv001,Chat with Alice,Alice Johnson,https://linkedin.com/in/alicejohnson,Test User,2024-05-15 10:30:00,,Great connecting! Would love to discuss the AI landscape with you.
+conv001,Chat with Alice,Test User,,Alice Johnson,2024-05-15 14:00:00,,Thanks Alice! I'd be happy to chat. How about next week?
+conv001,Chat with Alice,Alice Johnson,https://linkedin.com/in/alicejohnson,Test User,2024-05-16 09:15:00,,Perfect! Tuesday at 2pm works for me. Here's my calendar link.
+conv001,Chat with Alice,Test User,,Alice Johnson,2024-05-20 14:30:00,,Great call today! Really appreciate your insights on transformer architectures.
+conv002,Chat with Bob,Bob Williams,https://linkedin.com/in/bobwilliams,Test User,2024-03-10 11:00:00,,Hey! Saw your post about ML infrastructure. We're building something similar at my startup.
+conv002,Chat with Bob,Test User,,Bob Williams,2024-03-12 16:45:00,,That's awesome Bob! Would love to learn more about what you're building.
+conv003,Chat with Carol,Carol Davis,https://linkedin.com/in/caroldavis,Test User,2024-06-01 09:00:00,,Congratulations on the new role!
+conv003,Chat with Carol,Test User,,Carol Davis,2024-06-01 10:30:00,,Thank you Carol! How have things been at BigCo?
+conv003,Chat with Carol,Carol Davis,https://linkedin.com/in/caroldavis,Test User,2024-06-02 08:45:00,,Going well! We're scaling the team. Let me know if you know any good candidates.
+conv004,Chat with Eve,Test User,,Eve Wilson,2024-09-15 13:00:00,,Hi Eve! I saw you spoke at the DevOps conference. Great talk on observability!
+conv004,Chat with Eve,Eve Wilson,https://linkedin.com/in/evewilson,Test User,2024-09-18 10:00:00,,Thanks so much! Happy to chat more about it if you're interested in implementing similar practices.

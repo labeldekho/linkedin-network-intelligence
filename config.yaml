@@ -1,0 +1,195 @@
+# LinkedIn Network Intelligence - Configuration
+# Copy to config.local.yaml for local overrides (gitignored)
+
+# =============================================================================
+# LLM Provider Settings
+# =============================================================================
+llm:
+  # Provider: anthropic | openai | ollama | vllm
+  provider: anthropic
+  
+  # Model selection per provider
+  models:
+    anthropic: claude-sonnet-4-20250514
+    openai: gpt-4o
+    ollama: llama3.1:8b
+    vllm: meta-llama/Llama-3.1-8B-Instruct
+  
+  # API key environment variable names (keys never stored in config)
+  api_key_env:
+    anthropic: ANTHROPIC_API_KEY
+    openai: OPENAI_API_KEY
+  
+  # Local model settings
+  local:
+    ollama_base_url: http://localhost:11434
+    vllm_base_url: http://localhost:8000
+  
+  # Request settings
+  timeout_seconds: 30
+  max_retries: 3
+  retry_delay_seconds: 1
+
+# =============================================================================
+# Prompt Versions
+# =============================================================================
+prompts:
+  message_depth: v1
+  resurrection: v1
+  warm_path: v1
+  archetype: v1
+
+# =============================================================================
+# Relationship Strength Model
+# =============================================================================
+relationship:
+  # Days until relationship strength halves without interaction
+  decay_half_life_days: 180
+  
+  # Minimum strength floor (never decays below this)
+  minimum_strength: 0.05
+  
+  # Multiplier caps
+  depth_multiplier_max: 2.0
+  institutional_multiplier: 1.5
+  
+  # Interaction type base weights
+  interaction_weights:
+    message_sent: 1.0
+    message_received: 1.0
+    recommendation_written: 5.0
+    recommendation_received: 5.0
+    endorsement_given: 0.5
+    endorsement_received: 0.5
+
+# =============================================================================
+# Reciprocity Ledger
+# =============================================================================
+reciprocity:
+  # Positive = you gave value, Negative = you received value
+  scores:
+    recommendation_written: 10
+    recommendation_received: -10
+    endorsement_given: 2
+    endorsement_received: -2
+    # Messages are neutral (bidirectional value exchange)
+  
+  # Thresholds for categorization
+  thresholds:
+    strong_credit: 15      # You've given significantly more
+    credit: 5              # You've given more
+    balanced_min: -5       # Roughly balanced
+    balanced_max: 5
+    debit: -15             # You've received more
+    strong_debit: -999     # You've received significantly more
+
+# =============================================================================
+# Message Analysis
+# =============================================================================
+messages:
+  # Minimum messages in thread to analyze for depth
+  min_thread_length: 2
+  
+  # Days gap to consider new thread
+  thread_break_days: 7
+  
+  # Batch size for LLM calls
+  batch_size: 5
+  
+  # Skip analysis for messages shorter than (characters)
+  min_message_length: 20
+
+# =============================================================================
+# Resurrection Detection
+# =============================================================================
+resurrection:
+  # Minimum days dormant to consider for resurrection
+  min_dormant_days: 90
+  
+  # Maximum days (too old, unlikely to resurrect meaningfully)
+  max_dormant_days: 1095  # 3 years
+  
+  # Minimum relationship strength to bother suggesting
+  min_strength_threshold: 0.2
+
+# =============================================================================
+# Warm Path Discovery
+# =============================================================================
+warm_paths:
+  # Maximum bridge candidates to return per query
+  max_candidates: 10
+  
+  # Minimum relationship strength for bridge candidate
+  min_bridge_strength: 0.3
+  
+  # Weight factors for ranking
+  weights:
+    relationship_strength: 0.4
+    company_relevance: 0.4
+    recency: 0.2
+
+# =============================================================================
+# Caching
+# =============================================================================
+cache:
+  enabled: true
+  path: .cache/llm_responses.db
+  ttl_days: 7
+  
+  # Maximum cache size in MB (0 = unlimited)
+  max_size_mb: 500
+
+# =============================================================================
+# Output Settings
+# =============================================================================
+output:
+  # Default output directory
+  directory: ./outputs
+  
+  # Formats to generate (csv, markdown, json)
+  formats:
+    - csv
+    - markdown
+    - json
+  
+  # Include timestamps in filenames
+  timestamp_filenames: true
+  
+  # Markdown report settings
+  markdown:
+    include_methodology: true
+    max_items_per_section: 20
+
+# =============================================================================
+# Logging
+# =============================================================================
+logging:
+  level: INFO  # DEBUG | INFO | WARNING | ERROR
+  
+  # Log file (null = stdout only)
+  file: null
+  
+  # Include timestamps
+  timestamps: true
+  
+  # Never log these fields (privacy)
+  redact_fields:
+    - message_content
+    - email
+    - phone
+
+# =============================================================================
+# Processing
+# =============================================================================
+processing:
+  # Maximum connections to process (0 = all)
+  max_connections: 0
+  
+  # Skip connections older than (days, 0 = no limit)
+  max_connection_age_days: 0
+  
+  # Parallel LLM calls (careful with rate limits)
+  parallel_calls: 1
+  
+  # Progress reporting interval
+  progress_every_n: 50

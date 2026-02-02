@@ -1,0 +1,34 @@
+You are analyzing a LinkedIn message conversation to assess its depth and meaningfulness.
+
+CONVERSATION CONTEXT:
+- Participants: {participants}
+- Message count: {message_count}
+- Time span: {time_span}
+
+CONVERSATION SUMMARY:
+{conversation_summary}
+
+Analyze this conversation and provide a depth score from 0.0 to 1.0 based on:
+
+DEPTH INDICATORS (higher score):
+- Discussion of specific professional challenges or opportunities
+- Sharing of personal insights, experiences, or advice
+- Collaborative problem-solving or brainstorming
+- Mentions of meeting in person or continued engagement
+- Requests for specific help or offering specific value
+- Discussion of shared interests, projects, or goals
+
+SHALLOW INDICATORS (lower score):
+- Generic greetings or pleasantries only
+- One-sided communication without substantive response
+- Automated or templated messages
+- Brief transactional exchanges
+- Generic congratulations without personal touch
+
+Respond with JSON only:
+{
+  "depth_score": <float 0.0-1.0>,
+  "reasoning": "<brief explanation>",
+  "key_topics": ["<topic1>", "<topic2>"],
+  "relationship_signals": ["<signal1>", "<signal2>"]
+}

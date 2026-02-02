@@ -1,0 +1,15 @@
+Notes:
+This is a sample LinkedIn connections export for testing.
+All data is synthetic and anonymized.
+
+First Name,Last Name,Email Address,Company,Position,Connected On,URL
+Alice,Johnson,alice.johnson@techcorp.com,TechCorp,CTO,15 Jan 2023,https://linkedin.com/in/alicejohnson
+Bob,Williams,bob@startupxyz.com,StartupXYZ,Founder,20 Mar 2023,https://linkedin.com/in/bobwilliams
+Carol,Davis,,BigCo,VP Engineering,10 May 2023,https://linkedin.com/in/caroldavis
+David,Brown,david.b@anthropic.com,Anthropic,Engineer,25 Jul 2023,https://linkedin.com/in/davidbrown
+Eve,Wilson,eve@consulting.io,Consulting Partners,Principal,01 Sep 2023,https://linkedin.com/in/evewilson
+Frank,Miller,,Google,Staff Engineer,15 Nov 2023,https://linkedin.com/in/frankmiller
+Grace,Lee,grace.lee@meta.com,Meta,Engineering Manager,20 Dec 2023,https://linkedin.com/in/gracelee
+Henry,Taylor,,Amazon,Senior SDE,05 Jan 2024,https://linkedin.com/in/henrytaylor
+Ivy,Martinez,ivy@startup.co,Stealth Startup,Co-founder,10 Feb 2024,https://linkedin.com/in/ivymartinez
+Jack,Anderson,jack.a@openai.com,OpenAI,Research Scientist,25 Mar 2024,https://linkedin.com/in/jackanderson

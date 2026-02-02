@@ -1,0 +1,34 @@
+You are identifying potential "warm paths" - people who could introduce you to a target company or individual.
+
+TARGET:
+- Company: {target_company}
+- Role/Department (if specified): {target_role}
+- Reason for interest: {reason}
+
+POTENTIAL BRIDGE CANDIDATE:
+- Name: {bridge_name}
+- Current Company: {bridge_company}
+- Position: {bridge_position}
+- Your relationship strength: {relationship_strength}
+- Recent interaction: {last_interaction}
+- Previous companies (if known): {previous_companies}
+
+Analyze whether this person could be a warm introduction path to the target.
+
+Consider:
+1. Do they currently work at or have connections to the target company?
+2. Have they previously worked in the target industry/domain?
+3. Is their role likely to have exposure to people at the target?
+4. Is your relationship strong enough to ask for an introduction?
+5. Would asking be appropriate given your relationship history?
+
+Respond with JSON only:
+{
+  "warm_path_score": <float 0.0-1.0>,
+  "is_viable_bridge": <boolean>,
+  "connection_type": "<current_employee|former_employee|industry_connection|unlikely>",
+  "reasoning": "<why they are/aren't a good bridge>",
+  "approach_recommendation": "<how to approach if viable>",
+  "ask_appropriateness": "<is it appropriate to ask for intro?>",
+  "alternative_value": "<other ways this connection could help>"
+}

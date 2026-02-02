@@ -1,0 +1,51 @@
+You are analyzing a professional network to identify its overall pattern and health.
+
+NETWORK STATISTICS:
+- Total connections: {total_connections}
+- Active relationships (interacted in last 90 days): {active_count}
+- Dormant relationships: {dormant_count}
+- Average relationship strength: {avg_strength}
+
+COMPANY DISTRIBUTION:
+{company_distribution}
+
+INTERACTION PATTERNS:
+- Total messages sent: {messages_sent}
+- Total messages received: {messages_received}
+- Recommendations given: {recs_given}
+- Recommendations received: {recs_received}
+- Endorsements given: {endorsements_given}
+- Endorsements received: {endorsements_received}
+
+RECIPROCITY SUMMARY:
+- Strong credit relationships (you gave more): {strong_credit_count}
+- Balanced relationships: {balanced_count}
+- Strong debit relationships (they gave more): {strong_debit_count}
+
+Analyze this network and classify its archetype. Consider:
+1. Is the network diverse or concentrated in one industry/company?
+2. Are relationships actively maintained or mostly dormant?
+3. Is there healthy reciprocity or is it one-sided?
+4. What's the overall network health?
+
+POSSIBLE ARCHETYPES:
+- "Connector": Broad, diverse network with many weak ties
+- "Deep Networker": Smaller network with high-strength relationships
+- "Company Insider": Network concentrated around one employer
+- "Industry Expert": Network focused on specific industry/domain
+- "Passive Collector": Large network with minimal engagement
+- "Relationship Builder": Balanced reciprocity, active maintainer
+- "Opportunistic": High debit (receives more than gives)
+- "Generous Giver": High credit (gives more than receives)
+
+Respond with JSON only:
+{
+  "primary_archetype": "<archetype name>",
+  "secondary_archetype": "<archetype name or null>",
+  "confidence": <float 0.0-1.0>,
+  "network_health_score": <float 0.0-1.0>,
+  "strengths": ["<strength1>", "<strength2>"],
+  "weaknesses": ["<weakness1>", "<weakness2>"],
+  "recommendations": ["<actionable recommendation 1>", "<recommendation 2>"],
+  "key_insight": "<most important insight about this network>"
+}

@@ -1,0 +1,34 @@
+You are analyzing a dormant LinkedIn relationship to determine if it's worth rekindling.
+
+RELATIONSHIP CONTEXT:
+- Person: {person_name}
+- Company: {company}
+- Position: {position}
+- Days since last contact: {days_dormant}
+- Relationship strength (0-10): {relationship_strength}
+- Past interaction summary: {interaction_summary}
+
+USER'S CURRENT CONTEXT:
+- Current role: {user_role}
+- Current company: {user_company}
+- Professional focus: {user_focus}
+
+Analyze whether this relationship is worth "resurrecting" and provide actionable advice.
+
+Consider:
+1. Is there a natural reason to reconnect? (career change, shared interest, mutual benefit)
+2. What value could you offer them?
+3. What conversation starter would feel genuine, not transactional?
+4. Is the timing appropriate given the dormancy period?
+
+Respond with JSON only:
+{
+  "resurrection_score": <float 0.0-1.0>,
+  "should_resurrect": <boolean>,
+  "reasoning": "<why this relationship is/isn't worth rekindling>",
+  "suggested_approach": "<specific outreach recommendation>",
+  "conversation_starter": "<draft message or topic>",
+  "value_you_can_offer": "<what you could provide to them>",
+  "potential_value_to_you": "<what they might provide>",
+  "timing_assessment": "<is now a good time?>"
+}
